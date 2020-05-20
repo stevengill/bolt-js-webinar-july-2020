@@ -14,6 +14,7 @@ const app = new App({
 })();
 
 // subscribe to 'app_mention' event in your App config
+// need app_mentions:read and chat:write scopes
 // app.event('app_mention', async ({ event, context, client }) => {
 //   try {
 //     // directly call the api method 'chat.postMessage'
@@ -29,6 +30,7 @@ const app = new App({
 // });
 
 // subscribe to `message.channels` event in your App Config
+// need channels:read scope
 // app.message('hello', async ({ message, say }) => {
 //   console.log('app.message');
 //   console.log(message);

@@ -14,19 +14,19 @@ const app = new App({
 })();
 
 // subscribe to 'app_mention' event in your App config
-app.event('app_mention', async ({ event, context, client }) => {
-  try {
-    // directly call the api method 'chat.postMessage'
-    const result = await client.chat.postMessage({
-      token: context.botToken,
-      channel: event.channel,
-      text: `Thanks for the mention, <@${event.user}>!`
-    });
-  }
-  catch (error) {
-    console.error(error);
-  }
-});
+// app.event('app_mention', async ({ event, context, client }) => {
+//   try {
+//     // directly call the api method 'chat.postMessage'
+//     const result = await client.chat.postMessage({
+//       token: context.botToken,
+//       channel: event.channel,
+//       text: `Thanks for the mention, <@${event.user}>!`
+//     });
+//   }
+//   catch (error) {
+//     console.error(error);
+//   }
+// });
 
 // subscribe to `message.channels` event in your App Config
 // app.message('hello', async ({ message, say }) => {
@@ -65,52 +65,52 @@ app.event('app_mention', async ({ event, context, client }) => {
 // })
 
 // setup shortcut in your App config page
-app.shortcut('launch_shortcut', async ({ shortcut, ack, context, client }) => {
+// app.shortcut('launch_shortcut', async ({ shortcut, ack, context, client }) => {
 
-  try {
-    // Acknowledge shortcut request
-    await ack();
+//   try {
+//     // Acknowledge shortcut request
+//     await ack();
 
-    // Call the views.open method using one of the built-in WebClients
-    const result = await client.views.open({
-      // The token you used to initialize your app is stored in the `context` object
-      token: context.botToken,
-      trigger_id: shortcut.trigger_id,
-      view: {
-        type: "modal",
-        title: {
-          type: "plain_text",
-          text: "My App"
-        },
-        close: {
-          type: "plain_text",
-          text: "Close"
-        },
-        blocks: [
-          {
-            type: "section",
-            text: {
-              type: "mrkdwn",
-              text: "About the simplest modal you could conceive of :smile:\n\nMaybe <https://api.slack.com/reference/block-kit/interactive-components|*make the modal interactive*> or <https://api.slack.com/surfaces/modals/using#modifying|*learn more advanced modal use cases*>."
-            }
-          },
-          {
-            type: "context",
-            elements: [
-              {
-                type: "mrkdwn",
-                text: "Psssst this modal was designed using <https://api.slack.com/tools/block-kit-builder|*Block Kit Builder*>"
-              }
-            ]
-          }
-        ]
-      }
-    });
-  }
-  catch (error) {
-    console.error(error);
-  }
-});
+//     // Call the views.open method using one of the built-in WebClients
+//     const result = await client.views.open({
+//       // The token you used to initialize your app is stored in the `context` object
+//       token: context.botToken,
+//       trigger_id: shortcut.trigger_id,
+//       view: {
+//         type: "modal",
+//         title: {
+//           type: "plain_text",
+//           text: "My App"
+//         },
+//         close: {
+//           type: "plain_text",
+//           text: "Close"
+//         },
+//         blocks: [
+//           {
+//             type: "section",
+//             text: {
+//               type: "mrkdwn",
+//               text: "About the simplest modal you could conceive of :smile:\n\nMaybe <https://api.slack.com/reference/block-kit/interactive-components|*make the modal interactive*> or <https://api.slack.com/surfaces/modals/using#modifying|*learn more advanced modal use cases*>."
+//             }
+//           },
+//           {
+//             type: "context",
+//             elements: [
+//               {
+//                 type: "mrkdwn",
+//                 text: "Psssst this modal was designed using <https://api.slack.com/tools/block-kit-builder|*Block Kit Builder*>"
+//               }
+//             ]
+//           }
+//         ]
+//       }
+//     });
+//   }
+//   catch (error) {
+//     console.error(error);
+//   }
+// });
 
 // skip for now
 // app home demo

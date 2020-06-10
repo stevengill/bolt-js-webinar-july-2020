@@ -64,7 +64,7 @@ const app = new App({
 //   // acknowledge the request right away
 //   await ack();
 //   await say('Thanks for clicking the fancy button');
-// })
+// });
 
 // app home demo
 // app.event('app_home_opened', async ({ event, context, client }) => {
@@ -161,7 +161,7 @@ const app = new App({
 //       }
 //     });
 //   }
-//   catch (error) {
+//   catch (error) { 
 //     console.error(error);
 //   }
 // });

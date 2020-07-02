@@ -1,4 +1,4 @@
-# Bolt-js Hack Tour Example
+# Bolt-js Webinar July 2020 Example
 
 This is a quick example app showing off some of the functionality available in bolt-js. 
 
